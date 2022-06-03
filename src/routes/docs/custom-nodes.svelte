@@ -7,6 +7,7 @@
     ['height', '(required) number'],
     ['bgColor', 'string of color name or hexcode'],
     ['borderColor', 'string of color name or hexcode'],
+    ['borderRadius', 'number'],
     ['textColor', 'string of color name or hexcode']
   ];
 </script>
@@ -16,19 +17,18 @@
 </div>
 
 <p class="text-gray-600">
-  A powerful feature of <code class="code">Svelvet</code> is the ability to add custom nodes. Within
-  your custom nodes you can display your desired text, change colors (background, border and text), define
-  multiple source and target handles, and set your own dimensions. In this section we will render nodes
-  with varying customizations.
+  <code class="code">Svelvet</code> provides the ability to customize each node to your liking. To customize
+  your nodes, provide any of the following properties below in the node object. You can display your
+  desired text, change colors (background, border and text), define multiple source and target handles,
+  and set your own dimensions. Below you can find example implementations of these properties.
 </p>
 <p class="text-gray-600 mt-2">
   Current customizations include node
-  <code class="code">position</code>,
-  <code class="code">width</code>,
-  <code class="code">height</code>,
-  <code class="code">bgColor</code>,
-  <code class="code">borderColor</code>, and
-  <code class="code">textColor</code>.
+  {#each nodeProps as [key], i}
+    <code class="code">{key}</code>{#if i < nodeProps.length - 2}{', '}
+    {:else if i === nodeProps.length - 2}{', and '}
+    {:else}.{/if}
+  {/each}
 </p>
 
 <h3 class="text-xl font-semibold mt-12">Node Properties</h3>

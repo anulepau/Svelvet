@@ -5,13 +5,13 @@ import type { XYPosition } from './utils';
 export interface Node<T = any> {
   id: number;
   position: XYPosition;
-  type: string;
   data: T;
   width?: number;
   height?: number;
   bgColor?: string;
   fontSize?: number;
   borderColor?: string;
+  borderRadius?: number;
   textColor?: string;
 }
 
